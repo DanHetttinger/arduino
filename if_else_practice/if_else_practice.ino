@@ -21,10 +21,10 @@ void loop()
   int sensorValue = analogRead (A0);
   float voltage = sensorValue * (5.0 / 1023.0);
   Serial.println(voltage);
-  Serial.println("I'm a goob!");
+  Serial.println("I am Great!");
   delay(50);
 
-  if (sensorValue <= 2)
+  if (voltage < 2)                                   // prior mistake: reading sensorValue, rather than reading voltage)
     {                                              // open if-then-else statement
       digitalWrite(led1, HIGH);
       digitalWrite(led2, LOW);
